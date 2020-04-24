@@ -7,7 +7,7 @@ How do you stay up-to-date in an industry that is always evolving? How do you ge
 
 I'm not wealthy in the financial sense. Yes I'm blessed and wealthy in many other areas in my life that resonate in the spirit. It would be awesome to have an unlimited budget for lab equipment but most of us just do not have that. I've built my home lab with this in mind and I recommend you do the same. Here are some steps to follow as you build: 
 
-## Step 1. Identify the skills, job role, and type of work you are trying to achieve 
+### Step 1: Identify the skills, job role, and type of work you are trying to achieve 
 
 Common job titles to search: SOC Analyst, IT Support Analyst, Help Desk Analyst, Network Administrator, Linux Administrator, Network Engineer Active Directory Administrator, Systems Administrator, Systems Engineer, Software Engineer, Software Developer, Data Analyst, Devops Engineer, Threat Hunter, IT Insturctor, Cybersecurity Analyst, just to name a few.....
 
@@ -17,7 +17,7 @@ Common sites to use on your search: Google (if you've ever heard of it :) ), Lin
 
 Once you have your Learning Journey List move on to step 2
 
-### Step 2. Identify resources where you can obtain hardware & software for free or low cost
+### Step 2: Identify resources where you can obtain hardware & software for free or low cost
 
 You would be surprised how many organizations offer at least one their software products for free. The Open Source movement/philosophy really has given us technologists the opportunity to experiment and learn at a low cost especially when it comes to software tools & operating systems. If you are a student and have a .edu email address you can find tons of student discounts and intitiaves that can save you several thousand dollars on licensing for labs so please ask your school about this. If you aren't currently enrolled in a school don't be discouraged there are lots of great resources for you. Here are some resources that I'm aware of: 
 
