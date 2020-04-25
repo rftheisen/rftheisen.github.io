@@ -3,7 +3,7 @@
 # Learning Goals for the rest of 2020
     1. Pass CEH by May 15th *Scheduled* 
     2. Pass OSCP by August 20th 
-    3. Finish Cisco CCNA video series on YouTube by June 1st 
+    3. Finish Cisco CCNA video series on YouTube by July 1st 
     4. Pass CCNP Enterprise Core by December 11th 
     5. Obtain my BSIT Degree by the end of Fall semester 
 
