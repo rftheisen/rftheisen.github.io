@@ -5,7 +5,7 @@ Welcome to my ever changing website! You'll find that this site is built for lea
 
 ### [My teaching philosophy](https://rftheisen.github.io/teaching-philosophy/philosophy)
 ### [Build a home lab and enter boundless learning territory](https://rftheisen.github.io/HomeLab/homelabs)
-
+### [Automate it All - Some helpful Cybersecurity & IT OPs scripts ](https://rftheisen.github.io/Virtualization/virtualization)
 
 # Learning Goals for the rest of 2020
     1. Pass CEH by May 15th *Scheduled* 
