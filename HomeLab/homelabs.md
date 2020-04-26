@@ -24,19 +24,19 @@ You would be surprised how many organizations offer at least one of their softwa
 Side note: We should all strive to be SelfLedLearners. That pathway can be more challenging but can ultimately give you a unique advantage. Please know that going to school can often accelerate this process. 
 
 IfSelfLeadLearner
-========================================================================================================================================================================================
-    then 
-    Hardware Infrastructure should be in the labs at your school. If your school doesn't have labs..... please ask them why they do not have labs. Either way it would still be in your best interest to start building something you have access to at home. 
+================================================================================================================================
+then 
+Hardware Infrastructure should be in the labs at your school. If your school doesn't have labs..... please ask them why they do not have labs. Either way it would still be in your best interest to start building something you have access to at home. 
 
-    Your hardware infrastructure is what your software will run on. Identifiying hardware requirements is a great skill. You really should build it according to the software you are using and how you plan to use it. I highly recommend starting by building a Hyper-visor. This way you can really mold your system dynamically with the changes in the industry. This will also allow you to get familiar with many different software plaforms. You need some pretty good hardware to run a hyper-visor because your running several systems on top of one system. Here are some hardware specs I recommend: 
+ Your hardware infrastructure is what your software will run on. Identifiying hardware requirements is a great skill. You really should build it according to the software you are using and how you plan to use it. I highly recommend starting by building a Hyper-visor. This way you can really mold your system dynamically with the changes in the industry. This will also allow you to get familiar with many different software plaforms. You need some pretty good hardware to run a hyper-visor because your running several systems on top of one system. Here are some hardware specs I recommend: 
     
     
-     Here are some good hyper-visors:
+Here are some good hyper-visors:
 
-    VMware ESXI 
-    It's dominant in the industry right now because its easy to install, configure and manage. 
+VMware ESXI 
+It's dominant in the industry right now because its easy to install, configure and manage. 
 
-    Get Vmware ESXI Community Edition     ==================================================================================================================================================================================
+Get Vmware ESXI Community Edition     ================================================================================================================================
 
 
 
