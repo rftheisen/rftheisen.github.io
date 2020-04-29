@@ -2,6 +2,8 @@
 
 How do you stay up-to-date in an industry that is always evolving? How do you get into an industry like this? How do you stay relevant or even ahead in an industry like this? I'll give you an hint..... it's not about credentials (degrees, certifications, etc..) it's really all about skills & capability. Your credentials and pursuit of credentials should net you skills as you obtain the piece of paper. If you are obtaining credentials without skills, then something is wrong with the training program you are using. It should be hands-on and aligned with the skills & systems companies are using now and will be using in the future. One of the best things you can do to ensure this for yourself is by buidling your own Learning Infrastructure. Whether you are looking at IT Ops, Software Development or Cybersecurity you will benefit from buidling an infrastructure as you learn. Thats what I do! As I become aware of a new skill or system I set it up & maintain it in my lab environment at home. Hopefully I can inspire you to do the same for yourself and maybe even your team. The information I've shared below can help you set up a lab infrustructure: 
 
+An image will be here at some point. You'll like it....... I promise
+
 
 # Building your Home Lab
 
