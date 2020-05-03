@@ -9,7 +9,7 @@ Welcome to my ever changing website! You'll find that this site is built for lea
 ### [Virtualization - a computer inside a computer's computer](https://rftheisen.github.io/Virtualization/virtualization)
 
 # Learning Goals for the rest of 2020
-    1. Pass CEH by May 15th *Scheduled* 
+    1. Pass CEH by June1st *Scheduled* 
     2. Pass OSCP *Paid for and scheduled class start day for June21st*
     3. Finish Cisco CCNA video series on YouTube by July 1st 
     4. Pass CCNP Enterprise Core by December 11th 
