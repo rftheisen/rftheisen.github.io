@@ -165,8 +165,11 @@ Here is how they are defined:
 | Class B | 172.16.0.0 - 172.31.255.255      |    | 255.255.0.0   |
 | Class C | 192.168.0.0 - 192.168.255.255    |    | 255.255.255.0 |
 
-**IP address**     **Subnet Mask**
-Class A: 10.0.0.0 – 10.255.255.255            2
-55.0.0.0
-Class B: 172.16.0.0 – 172.31.255.255          255.255.0.0
-Class C: 192.168.0.0 – 192.168.255.255        255.255.255.0
+Great we have all this information about IP addressing and subnetting but what good is
+it if we don’t know how to use it. Let’s glue these concepts together.
+
+## IP Addressing Applied
+
+All operating systems that are designed to connect to a network have the option to
+configure an IP address. In Windows you navigate to the adapter settings to change
+the IP address statically or set it to be configured dynamically.
