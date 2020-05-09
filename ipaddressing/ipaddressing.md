@@ -32,3 +32,7 @@ a government experiment. This picture below is one of the first Computer Network
 topologies drawn to represent the Internet (ARPANET).
 
 ![arpanet](arpanet.png)
+
+# IPv4 Structure
+![structure](structure.png)
+
