@@ -37,3 +37,14 @@ topologies drawn to represent the Internet (ARPANET).
 
 ![structure](structure.png)
 
+What…… in…… the….. World is all that in that image?!?! This is probably what you are
+thinking right? Don’t worry you will understand it in due time, for now just follow me.
+Like many other protocols IPv4 specifies a structure for a message being sent over a
+network. Let’s say you are composing an email using Microsoft Outlook. You enter the email
+address of your friend in the To: field, finish your email and hit send. Immediately your’
+Operating System and the drivers for your NIC (Network Interface Card) work together to
+package your message inside an IPv4 packet. The process of packaging the data inside of
+the packet is known as encapsulation This process is like writing a letter (email) and placing
+it in an envelope (packet) to be carried to the destination by the postal service. All
+information that is generated and sent over a network goes through the process of
+encapsulation (remember the OSI Model!?).
