@@ -30,3 +30,5 @@ Network) and it was developed by the United States Department of Defense to addr
 packets for transmission over a physical medium. Yes, you could say the Internet started as
 a government experiment. This picture below is one of the first Computer Network
 topologies drawn to represent the Internet (ARPANET).
+
+![arpanet](arpanet.png)
