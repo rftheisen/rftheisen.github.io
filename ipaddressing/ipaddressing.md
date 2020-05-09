@@ -173,3 +173,7 @@ it if we don’t know how to use it. Let’s glue these concepts together.
 All operating systems that are designed to connect to a network have the option to
 configure an IP address. In Windows you navigate to the adapter settings to change
 the IP address statically or set it to be configured dynamically.
+
+![step1](step1.png)
+![step2](step2.png)
+![step3](step3.png)
