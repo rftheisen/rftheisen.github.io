@@ -96,3 +96,57 @@ If you said the last octet then you would be correct!
 Alright so now we must understand how and why 255 represents the network bits. Here
 is where that math we talked about earlier comes in. Trust me it’s not rocket science or
 calculus, its all just 1s and 0s.
+
+## It’s all just 1s and 0s
+
+The dotted decimal format of an IP address exists because most humans (even IT
+people) will not take the time to memorize the binary form of an IP address. We know
+that in its raw form data is just 1s and 0s. All modern day computers (except quantum
+computers see: http://www.wired.co.uk/article/quantum-computing-explained)
+receive a message as a stream of 1s and 0s, this language is known as
+______________________. 
+
+I feel confident that you answered binary.
+
+Applying this to IP addressing we should know that an IPv4 address (or subnet mask)
+can only be a maximum of 32 bits in length. Let’s look into this with this subnet mask:
+
+255.255.255.0
+
+11111111.11111111.11111111.00000000
+
+Understanding that the IPv4 address is a maximum of 32 bits in length how many bits is
+contained per octet? ____________
+
+If you said 8 bits per octet then you are probably going to be the next Pythagoras! But
+wait, where does the decimal number 255 or 192 come from?
+
+11111111.11111111.11111111.00000000 = ________________________
+128 64 32 16 8 4 2 1
+
+IPv4 uses the base 2 numbering system which means every binary digit has a decimal
+representation. Examining an IPv4 address in its binary form we should note 2 important
+factors: 1s represent Network bits and 0s represent host bits. Make sense? Cool, this
+means we add the decimal representation of the 1s to find the decimal number for
+that octet. What about the 0s? Leave them alone! You do not add the decimal
+representation of a binary digit that is 0.
+So what is the dotted decimal translation of the IP address listed above?
+If you said 255.255.255.0 you are on the right track. If you skipped ahead, found the
+answer and want to get on with this already, then the rest of this packet will not make a
+whole lot of sense. Go back and read to understand this before moving on. If you get
+this let’s continue.
+Remember that the Subnet Mask specifies the network and host bits of an IP address.
+Which means that when you compare the binary representation of a Subnet Mask and
+the binary representation of an IP address you can visualize how a router or NIC
+(Network Interface Card) decides where to send the message.
+
+11000000.10101000.00000000.00001010
+11111111.11111111.11111111.00000000
+
+Comparing the network and host bits of the Subnet Mask and IP address is called
+ANDing…… and this is how NICs on computers and routers decide whether to send the
+packet to a PC on its own network or to forward it to the Default Gateway. Wherever
+the 1s match is what will be the network, wherever the 0s match will be for hosts. It is
+also critical that you understand that the grandmaster network engineers have
+established some rules and different classes of IPv4 addresses of which we must be
+aware.
