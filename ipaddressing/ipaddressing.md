@@ -150,3 +150,15 @@ the 1s match is what will be the network, wherever the 0s match will be for host
 also critical that you understand that the grandmaster network engineers have
 established some rules and different classes of IPv4 addresses of which we must be
 aware.
+
+## RFC 1918 Private IP address (https://tools.ietf.org/html/rfc1918)
+
+The IETF (Internet Engineering Task Force) are the grandmasters of the networking world.
+They develop the protocols and technologies that are used in networking so it’s safe to
+say they know what they are talking about. Many moons ago they specified a range of
+IPv4 addresses that should be used on enterprise networks and considered as private.
+Here is how they are defined:
+**IP address**                               **Subnet Mask**
+Class A: 10.0.0.0 – 10.255.255.255            255.0.0.0
+Class B: 172.16.0.0 – 172.31.255.255          255.255.0.0
+Class C: 192.168.0.0 – 192.168.255.255        255.255.255.0
