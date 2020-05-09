@@ -70,3 +70,29 @@ game show host?” No, it is not at all like a game show host! The host portion 
 address should be unique to every computer. “How can I tell which portion of the IP
 address is reserved for the network and which is assignable to hosts?” You know what….. I
 am so glad you asked! Enter the Subnet Mask.
+
+## The Subnet Mask
+
+An IPv4 address would be useless without the Subnet Mask. The Subnet Mask is an
+address that defines the network and host portion of an IP address. Check this out:
+
+192.168.0.10
+255.255.255.0
+
+Let’s use another metaphor to make sense of this. If an IP address is a phone number for
+a computer then the Subnet Mask is the area code. In this case, where there is a 255 in
+the Subnet Mask the number in the corresponding octet in the IP address must match.
+Where there is a 0 in the Subnet Mask the number in the corresponding octet in the IP
+address can change and must be different on all devices connected to the network.
+Using this same example what is the network portion of this IP address?
+________________________
+
+If you said 192.168.0 is the network portion then you are absolutely……….. Correct!
+
+What is the host portion? ___________________________
+
+If you said the last octet then you would be correct!
+
+Alright so now we must understand how and why 255 represents the network bits. Here
+is where that math we talked about earlier comes in. Trust me it’s not rocket science or
+calculus, its all just 1s and 0s.
