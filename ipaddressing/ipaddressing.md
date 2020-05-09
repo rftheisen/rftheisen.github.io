@@ -50,3 +50,23 @@ information that is generated and sent over a network goes through the process o
 encapsulation (remember the OSI Model!?).
 
 ![clientserver](clientserver.png)
+
+Each message generated for transmission over a network has a source and destination IP
+address (like we saw in the addressing structure highlighted in Diagram 1-2). We must also
+note that the IP address has a specific format. This formatting is called **Dotted Decimal**.
+Take the IP address **192.168.0.5** for example, this is an IPv4 address and you’ll notice that
+it is made up of **4 decimal numbers** separated by **4 octets** (spaces between periods).
+The IPv4 address has 2 portions: Network & Host. The **Network** & **Host** portion of the
+IPv4 address are critical to understanding how you should apply an addressing scheme to a
+network. Let’s compare a network to a neighborhood. A neighborhood is a grouping of
+houses in as part of a town or district and a network is a grouping of computers. Each
+house in a neighborhood has a specific address that is unique to that house. Each computer
+in a network has an IP address that is unique to that computer. Please understand that the
+Network portion of an IP address represents the whole network (neighborhood) therefore
+every computer that is going to be on the same network should have an IP address that has
+the same network portion. “Alright great the network portion is important because it
+summarizes an entire network but what about the host portion you mentioned? Is this like a
+game show host?” No, it is not at all like a game show host! The host portion of an IP
+address should be unique to every computer. “How can I tell which portion of the IP
+address is reserved for the network and which is assignable to hosts?” You know what….. I
+am so glad you asked! Enter the Subnet Mask.
