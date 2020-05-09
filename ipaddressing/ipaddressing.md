@@ -63,8 +63,8 @@ houses in as part of a town or district and a network is a grouping of computers
 house in a neighborhood has a specific address that is unique to that house. Each computer
 in a network has an IP address that is unique to that computer. Please understand that the
 Network portion of an IP address represents the whole network (neighborhood) therefore
-__every computer that is going to be on the same network should have an IP address that has
-the same network portion__. “Alright great the network portion is important because it
+__**every computer that is going to be on the same network should have an IP address that has
+the same network portion__**. “Alright great the network portion is important because it
 summarizes an entire network but what about the host portion you mentioned? Is this like a
 game show host?” No, it is not at all like a game show host! The host portion of an IP
 address should be unique to every computer. “How can I tell which portion of the IP
