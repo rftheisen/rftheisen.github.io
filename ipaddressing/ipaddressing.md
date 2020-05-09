@@ -34,5 +34,6 @@ topologies drawn to represent the Internet (ARPANET).
 ![arpanet](arpanet.png)
 
 # IPv4 Structure
+
 ![structure](structure.png)
 
