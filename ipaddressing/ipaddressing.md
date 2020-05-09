@@ -48,3 +48,5 @@ the packet is known as encapsulation This process is like writing a letter (emai
 it in an envelope (packet) to be carried to the destination by the postal service. All
 information that is generated and sent over a network goes through the process of
 encapsulation (remember the OSI Model!?).
+
+![clientserver](clientserver.png)
