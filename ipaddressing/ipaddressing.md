@@ -177,3 +177,37 @@ the IP address statically or set it to be configured dynamically.
 ![step1](step1.png)
 ![step2](step2.png)
 ![step3](step3.png)
+
+IP addressing should be considered in your network design and based on host
+requirements per network or department. The right IP addressing scheme is calculated
+based on your Subnet Mask because a Subnet Mask gives you the total number of
+addresses. To calculate this I have a great method to use. Here it is:
+Host requirement = 54
+1. Think in binary!
+- What Subnet Mask would give me close to the host requirement?
+- I must consider the magic number (the decimal representation of the last 1 in the
+Subnet Mask). The Magic Number will also help us find the next network!
+2. Find the Magic number (one that gives you at least 54 addresses)
+- 11111111.11111111.11111111.11000000
+ 128 64 32 16 8 4 2 1
+- This gives us a total usable range of 62 addresses. Remember you have to
+accommodate for the network and broadcast address.
+3. Find the next network (you can pick any private IP class to start with). We will use
+a class C IP address
+- We know the 1st network will be 192.168.0.0
+- What is the 2nd network? _______________
+If you said 192.168.0.64 then you are correct! How did we get that? THE MAGIC
+NUMBER! Isn’t it magical?
+- Once you have the 2nd network you can determine the usable range within your
+1
+st network
+4. Find the range for the 1st network
+- 1
+st network: 192.168.0.0
+- 2
+nd network: 192.168.0.64
+- Usable range for 1st network: 192.168.0.1 – 192.168.0.62
+Broadcast for 1st network is 192.168.0.63
+5. This is all you need!
+It is important that you note with any network you will always need to account for the
+network (1st address) and broadcast address (last address before next network begins).
