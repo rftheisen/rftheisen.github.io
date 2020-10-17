@@ -1,3 +1,8 @@
+# Automation all the things 
+
+Automation as a philosophy and approach to work is in full effect in our society period. Lets just consider what Andressen Horrowitz wrote in his essay titled "Software is eating the world.". We can look at the world now and see that software indeed has eaten the world. Remember when we used to walk into a store that existed soley for so that we could borrow movies and video games. Well now all of this has been virtualized and automated. All we have to do is pay a small percentage a month for access to unlimited libraries of movies, shows and video games. 
+
+
 # Cisco IOS Device Base Line Configurations
 
 ## Router Configurations
