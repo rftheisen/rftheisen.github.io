@@ -13,6 +13,8 @@ As a technologist myself when I am administering the systems I use for mass inst
 
 # Cisco IOS Device Base Line Configurations
 
+In business, industry and higher education many large sized organizations decided many many years ago to go with Cisco for their network infrastructure. You'll find many Cisco Switches and Routers out in the wilderness. One of the most appealing features of a Cisco product is many of them run their proprietary OS called IOS(Internetwork Operating System). It's got an amazing command line interface that if learned properly  you'll breeze through configurations and even have the ability to automate tasks on a large scale. I'm growing more and more intrigued by the promises of Ansible but you really should learn IOS as a good baseline. Many networking vendors still include CLIs on their operating systems though many have gone to a cloud-based controller model. 
+
 ## Router Configurations
 
 ``` 
