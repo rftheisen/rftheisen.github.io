@@ -8,7 +8,7 @@ Even the field of IT is continously iterating towards automated systems to free 
 
 Most of us are carrying around a super computer in our pockets that we can verbally call on for assistance. Dont believe me!? Try it for yourself! If you have an iPhone say "Hey Siri, text my mom and tell her I love her". Siri interfaces with iMessage to send the text message to your mom or whatever loved one you just texted. If you do not have an iPhone you probably are running an OS that runs Google's AI assistant. To use Google's AI assistant just say "Ok, Google" and Google assistant uses Google Maps to navigate to your favorite restauraunt. People..... this is amazing stuff why aren't more of us using it. Get better at using it and you actually become more employable. Just look at technical careers, they pay well because they required more skills. Guess what!? The Internet and the World Wide Web has made it easier than ever to gain skills, knowledge and even find paid work. We must have the confidence to learn what it takes to do the work we are called to do and the Internet is a wonderful tool to enable this. 
 
-As a technologist myself when I am administering the system I use for mass instruction I like to implement automation whereever I see the opportunitiy. I've listed below examples of IT Automation scripts I use and teach others how to use: 
+As a technologist myself when I am administering the systems I use for mass instruction I like to implement automation whereever I see the opportunitiy. I've listed below examples of IT Automation scripts I use and teach others how to use: 
 
 
 # Cisco IOS Device Base Line Configurations
