@@ -130,3 +130,7 @@ Many networking vendors still include CLIs in their operating systems. The lates
     ip add 192.168.20.2 255.255.255.0
     no shut 
 ```
+
+# Red Hat Ansible 
+
+Early in this lesson I mentioned Red Hat's automation engine Ansible. I believe this technology will become a force in IT Operations (Network and System administration) affording all IT professionals a fun and easy way to automate some of the mundane tasks that are taking too long to complete. These tasks are distracting from more important matters like making sure users are empowered, secured and organizations can keep evolving with the technology. Ansible does have a slight learning curve so it would be in your best interest to start learning it directly from the developers. Ansible is free and open source so you'll find a great community backing the project with [exceptional education based documentation](https://docs.ansible.com/ansible/latest/network/getting_started/index.html). 
