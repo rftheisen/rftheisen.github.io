@@ -223,5 +223,4 @@ NUMBER! Isn’t it magical?
 
 ### Step 5. This is all you need!
 
-It is important that you note with any network you will always need to account for the
-network (1st address) and broadcast address (last address before next network begins).
+Take some time to practice this method with intentionality. Feel free to use a subnetting calculator to check your work as you go. If you would like some challenge problems, I would be glad to send you some I've developed for my students. Have fun!
