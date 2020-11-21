@@ -1,5 +1,6 @@
 # Exploring Drone Technology & Cybersecurity
-Hardware Explanation 
+## Hardware Explanation 
+
 ![TelloDroneImage](telloblueprint.png)
 
 CPU: Intel 14 Core Processor
