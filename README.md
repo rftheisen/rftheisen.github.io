@@ -4,10 +4,17 @@ Welcome to my ever changing website! You'll find that this site is built for lea
 
 
 ### [My teaching philosophy](https://rftheisen.github.io/teaching-philosophy/philosophy)
+
 ### [Build a home lab and enter boundless learning territory](https://rftheisen.github.io/HomeLab/homelabs)
+
 ### [Automate it All - Including some useful algorithms and scripts for your enjoyment](https://rftheisen.github.io/Scripts/scripts)
 ### [Virtualization - a computer inside a computer's computer](https://rftheisen.github.io/Virtualization/virtualization)
+
 ### [IP addressing & Subnetting - Why do you need it and how do you do it?](https://rftheisen.github.io/ipaddressing/ipaddressing)
+
+### [It's a bird, it's a plane, it's a drone - Drones & Cybersecurity](rftheisen.github.io/ExploringDrones/DronesOntheNet)
+
+
 
 # Learning Goals for the rest of 2020
     1. Pass CEH by June1st *Scheduled* 
