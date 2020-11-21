@@ -6,6 +6,8 @@
 CPU: Intel 14 Core Processor
 - This is the brains of the system and where the real magic happens.
 
+5 Megapixel camera 
+- Allowing for high quality images and videos
 - 4 tiny propellors 
 - 4 bump guards 
 - battery charger port connected with micro usb
