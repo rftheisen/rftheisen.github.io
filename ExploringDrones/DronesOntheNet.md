@@ -18,7 +18,8 @@ CPU: Intel 14 Core Processor
 
 
 ## Software & Networking Exploration
-- Runs DHCP server that leases out 192.168.10.0/24 network
+The Tello Drone runs a DHCP server that leases out 192.168.10.0/24 network address 
+
 Checking my ip address and sending a ping icmp message to my drone
 ![DroneNetworking](dronenetworking.gif)
 
