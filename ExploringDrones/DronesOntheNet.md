@@ -16,8 +16,8 @@ Software & Networking Exploration
 - The Tello SDK is written in Python
 - [dji-sdk/Tello-python GITHub Repo](https://github.com/dji-sdk/
 Tello-Python)
-- Running Abyss webserver port: 9999 
-- NMAP scan shows: 
+
+- NMAP scan shows: Running Abyss webserver port: 9999 
 Requirements: 
 - Computer Hardware  (Laptop, Desktop or Raspberry Pi) (tested with windows)
 - WiFi 
