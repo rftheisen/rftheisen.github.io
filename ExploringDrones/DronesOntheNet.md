@@ -7,12 +7,12 @@ CPU: Intel 14 Core Processor
 - This is the brains of the system and where the real magic happens.
 
 5 Megapixel camera 
-- Allowing for high quality images and videos
-- 4 tiny propellors 
-4 propellers guards 
+- Allowing for high quality images and videos 4 tiny propellors 
+4 propeller guards 
 - Crashing is inevitable! 
-- battery charger port connected with micro usb
-- x1 battery 
+1 battery charger port connected with micro usb
+1 1.1Ah/2.8 volt battery 
+- Maybe one day Tesla will make a battery that can fit this and last longer 
 - Has WiFi enabled NIC with SSID Broadcast no security enabled
 
 
