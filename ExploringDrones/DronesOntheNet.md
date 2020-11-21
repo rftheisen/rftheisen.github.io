@@ -1,4 +1,4 @@
-Exploring Drone Technology & Cybersecurity
+# Exploring Drone Technology & Cybersecurity
 
 Requirements: 
 - Computer Hardware  (Laptop, Desktop or Raspberry Pi) (tested with windows)
@@ -8,3 +8,18 @@ Requirements:
     -This to a .py file that is a UDP client that should allow us to send commands to the drone
 
 - Need to learn how to control drone with a graphical interface. Also need a way to connect to camera.
+- Fantastic demonstration: https://www.youtube.com/watch?v=kcXN7CYgQ0g
+
+Hardware Explination 
+CPU: Intel 
+
+- 4 tiny propellors 
+- 4 bumb guards 
+- battery charger port connected with micro usb
+- x1 battery 
+
+
+Software Explination 
+
+
+Networking Explination
