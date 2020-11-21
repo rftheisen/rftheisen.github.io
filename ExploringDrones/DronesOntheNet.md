@@ -14,7 +14,7 @@ CPU: Intel 14 Core Processor
 
 
 
-Software & Networking Exploration
+## Software & Networking Exploration
 - Runs DHCP server that leases out 192.168.10.0/24 network
 - Fantastic demonstration of connecting to Tello Drone: https://www.youtube.com/watch?v=kcXN7CYgQ0g
 - The Tello SDK is written in Python
