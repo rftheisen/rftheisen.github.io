@@ -1,6 +1,9 @@
 # Exploring Drone Technology & Cybersecurity
-Hardware Explination 
-CPU: Intel 
+Hardware Explanation 
+![TelloDroneImage](DronesOntheNet.png)
+
+CPU: Intel 14 Core Processor
+- This is the brains of the system and where the real magic happens.
 
 - 4 tiny propellors 
 - 4 bump guards 
