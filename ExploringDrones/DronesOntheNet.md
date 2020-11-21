@@ -1,6 +1,6 @@
 # Exploring Drone Technology & Cybersecurity
 Hardware Explanation 
-![TelloDroneImage](DronesOntheNet.png)
+![TelloDroneImage](telloblueprint.png)
 
 CPU: Intel 14 Core Processor
 - This is the brains of the system and where the real magic happens.
