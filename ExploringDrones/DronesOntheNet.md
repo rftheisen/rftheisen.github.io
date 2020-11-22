@@ -28,12 +28,8 @@ Checking my ip address and sending a ping icmp message to my drone
 - [NMAP](https://nmap.org/) scan shows: 
 Running Abyss webserver port: 9999 
 ![Scanning drone with NMAP](nmapscan.gif)
-Requirements: 
-- Computer Hardware  (Laptop, Desktop or Raspberry Pi) (tested with windows)
-- WiFi 
-- python
-- 
- - This to a .py file that is a UDP client that should allow us to send commands to the drone
 
+ 
+In Progress: 
 - Need to learn how to control drone with a graphical interface. Also need a way to connect to camera.
-- 
+
