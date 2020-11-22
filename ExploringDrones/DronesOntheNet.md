@@ -13,7 +13,8 @@ CPU: Intel 14 Core Processor
 - 1 battery charger port connected with micro usb
 - 1 1.1Ah/2.8 volt battery 
 - Maybe one day Tesla will make a battery that can fit this and last longer in flight
-- Has WiFi enabled NIC with SSID Broadcast no security enabled
+- Has WiFi enabled NIC with SSID Broadcast no security enabled out-of-box.
+![SSID](TelloSSID.png)
 
 
 
