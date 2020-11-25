@@ -35,3 +35,5 @@ I was successful in connecting to the drone utilizing the [Drooone Windows app](
   
 
 ![ConnectingtoDroneThroughDrooone](connectionsuccess.gif)
+
+When I first started experimenting with Drooone the application kept displaying an error message when I attempted to connect to the Tello SSID (wireless network name). After some troubleshooting I discovered that it was the Windows firewall denying the connection from the OS to the drone. Deactivating the firewall allowed it to work, following this I allowed UDP ports: 10001 & 10002 through the firewall. Leaving the entire Firewall turned off is not a best practice & can put your computer at risk. This is why you must learn what exactly is being blocked and allow that specific application or logical port through the firewall.
