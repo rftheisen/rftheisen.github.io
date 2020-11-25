@@ -33,4 +33,5 @@ Running Abyss webserver port: 9999
  
 In Progress: 
 - Need to learn how to control drone with a graphical interface. Also need a way to connect to camera.
+    - Currently working to get [Drooone Windows app](https://www.microsoft.com/en-us/p/drooone/9n0z6wvt0w6n?activetab=pivot:regionofsystemrequirementstab) working    
 
