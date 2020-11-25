@@ -31,7 +31,6 @@ Running Abyss webserver port: 9999
 ![Scanning drone with NMAP](nmapscan.gif)
 
  
-In Progress: 
-- Need to learn how to control drone with a graphical interface. Also need a way to connect to camera.
-    - Currently working to get [Drooone Windows app](https://www.microsoft.com/en-us/p/drooone/9n0z6wvt0w6n?activetab=pivot:regionofsystemrequirementstab) working    
+I was successful in connecting to the drone utilizing the [Drooone Windows app](https://www.microsoft.com/en-us/p/drooone/9n0z6wvt0w6n?activetab=pivot:regionofsystemrequirementstab) developed by Symmetry Soft. This allows us to pilot the drone from our Windows system. See below for a quick view of how this works. 
+  
 
