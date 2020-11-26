@@ -1,0 +1,10 @@
+# Think twice before you throw away your old smartphone 
+- Talk about how smartphone hardware is decently powerful computing
+- Talk about all the wonderful utilities of smartphone hardware
+    - Just WiFi, no Cellular 
+    - Lots of storage for music and movies 
+    - Expandable storage (talk about how we have grown dependant on streaming)
+    - IP camera 
+    - Camera 
+    - Microphone 
+    - Completing school work
