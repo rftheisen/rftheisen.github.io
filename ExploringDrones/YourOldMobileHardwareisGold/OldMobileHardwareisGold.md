@@ -8,3 +8,4 @@
     - Camera 
     - Microphone 
     - Completing school work
+    - Being more resourceful with bandwidth
