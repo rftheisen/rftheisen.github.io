@@ -5,7 +5,7 @@
     - Lots of storage for music and movies 
     - Expandable storage (talk about how we have grown dependant on streaming)
     - IP camera 
-    - Camera 
+    - Offline Camera 
     - Microphone 
     - Completing school work
     - Being more resourceful with bandwidth
