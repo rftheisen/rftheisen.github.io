@@ -1,4 +1,4 @@
-# Welcome to my learning projects site.
+# Bob's Learning Projects
 
 This is where I host software projects and games to experiment and learn with. 
 
