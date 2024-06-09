@@ -9,3 +9,10 @@ Play here: [rtheisen.github.io/pages](https://rftheisen.github.io/pong/)
 
 See the source code for PongLab here: https://github.com/rftheisen/pong
 
+## videosearch
+
+When you search for topics video search will search my YouTube channel (LTN Labs) for relevant content. Feel free to clone this project and use it for your own YouTube channel. Reach out to me if you need help getting it to work for your specific content.
+
+![videosearchdemo](https://github.com/rftheisen/rftheisen.github.io/assets/52935050/31cde245-e2af-43a9-91f0-0bcf78027e1b)
+
+
