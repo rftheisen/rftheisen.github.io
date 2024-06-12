@@ -18,4 +18,4 @@ Use videosearch here: https://rftheisen.github.io/videosearch/
 
 ![videosearchdemo](https://github.com/rftheisen/rftheisen.github.io/assets/52935050/31cde245-e2af-43a9-91f0-0bcf78027e1b)
 
-See the source code for videosearch here: [https://rftheisen.github.io/videosearch/](https://github.com/rftheisen/videosearch)
+See the source code for videosearch here: [[https://rftheisen.github.io/videosearch/](https://github.com/rftheisen/videosearch)](https://github.com/rftheisen/videosearch)
