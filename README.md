@@ -18,4 +18,6 @@ Use videosearch here: https://rftheisen.github.io/videosearch/
 
 ![videosearchdemo](https://github.com/rftheisen/rftheisen.github.io/assets/52935050/31cde245-e2af-43a9-91f0-0bcf78027e1b)
 
+Please feel free to customize this project for your own YouTube channel and content. You will need to edit the videos.json file to ensure it is referencing your content. You will also need to ensure the videosearch project files are hosted on your preferred platform. I recommend using GitHub pages.
+
 See the source code for videosearch here: [https://github.com/rftheisen/videosearch](https://github.com/rftheisen/videosearch)
