@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,18 +7,53 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    /* ── Theme variables ──────────────────────────────────────────────── */
     :root {
-      --bg:        #0d0b1e;
-      --bg2:       #130e2a;
-      --surface:   rgba(255,255,255,0.04);
-      --border:    rgba(255,255,255,0.08);
-      --text:      rgba(255,255,255,0.88);
-      --muted:     rgba(255,255,255,0.38);
-      --accent:    #818cf8;
+      --bg:          #0d0b1e;
+      --bg2:         #130e2a;
+      --surface:     rgba(255,255,255,0.04);
+      --surface2:    rgba(255,255,255,0.08);
+      --border:      rgba(255,255,255,0.08);
+      --border2:     rgba(255,255,255,0.18);
+      --text:        rgba(255,255,255,0.88);
+      --muted:       rgba(255,255,255,0.38);
+      --accent:      #818cf8;
+      --accent2:     #f472b6;
       --accent-glow: rgba(129,140,248,0.35);
+      --header-bg:   rgba(13,11,30,0.80);
     }
 
-    /* ── Base ───────────────────────────────────────────────────────── */
+    html[data-theme="light"] {
+      --bg:          #f5f4ff;
+      --bg2:         #eae9f8;
+      --surface:     rgba(0,0,0,0.04);
+      --surface2:    rgba(0,0,0,0.08);
+      --border:      rgba(0,0,0,0.10);
+      --border2:     rgba(0,0,0,0.20);
+      --text:        rgba(0,0,0,0.88);
+      --muted:       rgba(0,0,0,0.45);
+      --accent:      #4f46e5;
+      --accent2:     #db2777;
+      --accent-glow: rgba(79,70,229,0.25);
+      --header-bg:   rgba(245,244,255,0.82);
+    }
+
+    /* ── Keyframes ────────────────────────────────────────────────────── */
+    @keyframes gradientShift {
+      0%   { background-position: 0%   50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0%   50%; }
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.4; }
+    }
+    @keyframes shimmer {
+      0%   { background-position: -200% 0; }
+      100% { background-position:  200% 0; }
+    }
+
+    /* ── Base ────────────────────────────────────────────────────────── */
     html { scroll-behavior: smooth; }
     body {
       background: var(--bg);
@@ -26,26 +61,27 @@
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       line-height: 1.6;
       min-height: 100vh;
+      transition: background 0.3s, color 0.3s;
     }
-
     a { color: inherit; text-decoration: none; }
 
-    /* ── Header ─────────────────────────────────────────────────────── */
+    /* ── Header ──────────────────────────────────────────────────────── */
     header {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(13,11,30,0.75);
+      background: var(--header-bg);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
       padding: 14px 32px;
+      transition: background 0.3s, border-color 0.3s;
     }
     .header-inner {
       max-width: 1100px; margin: 0 auto;
-      display: flex; align-items: center; gap: 14px;
+      display: flex; align-items: center; gap: 12px;
     }
     .avatar {
       width: 38px; height: 38px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), #f472b6);
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
       display: flex; align-items: center; justify-content: center;
       font-weight: 700; font-size: 16px; flex-shrink: 0;
       box-shadow: 0 0 16px var(--accent-glow);
@@ -53,52 +89,131 @@
     .header-text { flex: 1; }
     .header-text h1 { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
     .header-text p  { font-size: 12px; color: var(--muted); }
+
+    /* Theme toggle */
+    #theme-toggle {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      cursor: pointer;
+      font-size: 16px;
+      padding: 6px 10px;
+      line-height: 1;
+      flex-shrink: 0;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    #theme-toggle:hover { background: var(--surface2); border-color: var(--border2); }
+
     .gh-link {
       display: flex; align-items: center; gap: 6px;
       font-size: 13px; color: var(--muted);
       border: 1px solid var(--border);
       border-radius: 8px; padding: 6px 12px;
+      flex-shrink: 0;
       transition: color 0.2s, border-color 0.2s;
     }
-    .gh-link:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
+    .gh-link:hover { color: var(--text); border-color: var(--border2); }
     .gh-link svg { width: 16px; height: 16px; fill: currentColor; }
 
-    /* ── Main ───────────────────────────────────────────────────────── */
+    /* ── Main ────────────────────────────────────────────────────────── */
     main { max-width: 1100px; margin: 0 auto; padding: 48px 24px 80px; }
 
-    /* ── Hero ───────────────────────────────────────────────────────── */
-    .hero { margin-bottom: 48px; }
+    /* ── Hero ────────────────────────────────────────────────────────── */
+    .hero { margin-bottom: 40px; }
     .hero h2 {
       font-size: clamp(28px, 5vw, 42px);
       font-weight: 800; letter-spacing: -0.03em;
-      background: linear-gradient(135deg, #fff 30%, var(--accent));
+      background: linear-gradient(135deg, #ffffff 15%, #818cf8 45%, #f472b6 75%, #ffffff 100%);
+      background-size: 300% 300%;
       -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       background-clip: text;
+      animation: gradientShift 8s ease infinite;
       margin-bottom: 10px;
     }
-    .hero p { font-size: 16px; color: var(--muted); max-width: 520px; }
-
-    /* ── Filters ────────────────────────────────────────────────────── */
-    .filters {
-      display: flex; gap: 8px; flex-wrap: wrap;
-      margin-bottom: 32px;
+    html[data-theme="light"] .hero h2 {
+      background: linear-gradient(135deg, #1e1b4b 15%, #4f46e5 45%, #db2777 75%, #1e1b4b 100%);
+      background-size: 300% 300%;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradientShift 8s ease infinite;
     }
+    .hero p { font-size: 16px; color: var(--muted); max-width: 520px; margin-bottom: 18px; }
+
+    /* ── Stats bar ────────────────────────────────────────────────────── */
+    #stats-bar {
+      display: flex; gap: 6px 14px; flex-wrap: wrap; align-items: center;
+      font-size: 13px; color: var(--muted);
+    }
+    #stats-bar strong { color: var(--text); font-weight: 600; }
+    .stat-sep { color: var(--border2); user-select: none; }
+
+    /* ── Search ──────────────────────────────────────────────────────── */
+    .search-wrapper {
+      position: relative; margin-bottom: 18px;
+    }
+    .search-icon {
+      position: absolute; left: 12px; top: 50%; transform: translateY(-50%);
+      color: var(--muted); pointer-events: none; font-size: 14px; line-height: 1;
+    }
+    #search {
+      width: 100%; max-width: 380px;
+      padding: 9px 14px 9px 36px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text);
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s, background 0.3s;
+    }
+    #search::placeholder { color: var(--muted); }
+    #search:focus {
+      border-color: rgba(129,140,248,0.55);
+      box-shadow: 0 0 0 3px rgba(129,140,248,0.12);
+    }
+    html[data-theme="light"] #search:focus {
+      border-color: rgba(79,70,229,0.5);
+      box-shadow: 0 0 0 3px rgba(79,70,229,0.1);
+    }
+
+    /* ── Filters ─────────────────────────────────────────────────────── */
+    .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 32px; }
     .pill {
-      padding: 7px 18px; border-radius: 999px; font-size: 13px; font-weight: 500;
+      display: flex; align-items: center; gap: 6px;
+      padding: 7px 16px; border-radius: 999px;
+      font-size: 13px; font-weight: 500;
       border: 1px solid var(--border);
       background: var(--surface);
-      color: var(--muted); cursor: pointer;
+      color: var(--muted);
+      cursor: pointer;
       transition: background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
     }
-    .pill:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
+    .pill:hover { color: var(--text); border-color: var(--border2); background: var(--surface2); }
     .pill.active {
       background: rgba(129,140,248,0.18);
       border-color: rgba(129,140,248,0.5);
       color: #c7d0ff;
       box-shadow: 0 0 16px var(--accent-glow);
     }
+    html[data-theme="light"] .pill.active {
+      background: rgba(79,70,229,0.12);
+      border-color: rgba(79,70,229,0.4);
+      color: #3730a3;
+      box-shadow: 0 0 12px rgba(79,70,229,0.2);
+    }
+    .pill-count {
+      font-size: 11px; font-weight: 600;
+      padding: 1px 7px; border-radius: 999px;
+      background: var(--surface2);
+      color: var(--muted);
+      transition: background 0.2s, color 0.2s;
+    }
+    .pill.active .pill-count { background: rgba(129,140,248,0.28); color: #c7d0ff; }
+    html[data-theme="light"] .pill.active .pill-count { background: rgba(79,70,229,0.2); color: #3730a3; }
 
-    /* ── Grid ───────────────────────────────────────────────────────── */
+    /* ── Grid ────────────────────────────────────────────────────────── */
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -107,7 +222,7 @@
     @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
 
-    /* ── Card ───────────────────────────────────────────────────────── */
+    /* ── Card ────────────────────────────────────────────────────────── */
     .card {
       position: relative;
       background: var(--surface);
@@ -115,15 +230,29 @@
       border-radius: 16px;
       padding: 24px;
       display: flex; flex-direction: column; gap: 12px;
-      transition: border-color 0.25s, box-shadow 0.25s, transform 0.2s;
+      /* entrance + hover transitions */
+      transition:
+        border-color 0.25s,
+        box-shadow   0.25s,
+        transform    0.22s,
+        opacity      0.55s,
+        translate    0.55s;
+      /* entrance start state */
+      opacity: 0;
+      translate: 0 22px;
+    }
+    .card.visible {
+      opacity: 1;
+      translate: 0 0;
     }
     .card:hover {
-      border-color: rgba(129,140,248,0.35);
-      box-shadow: 0 0 32px rgba(129,140,248,0.1);
-      transform: translateY(-2px);
+      border-color: var(--card-border-hover, rgba(129,140,248,0.4));
+      box-shadow: 0 8px 40px var(--card-glow, rgba(129,140,248,0.13));
+      transform: translateY(-3px);
     }
     .card[data-hidden="true"] { display: none; }
 
+    /* ── Live badge ──────────────────────────────────────────────────── */
     .live-badge {
       position: absolute; top: 16px; right: 16px;
       display: flex; align-items: center; gap: 5px;
@@ -136,23 +265,18 @@
       box-shadow: 0 0 6px #4ade80;
       animation: pulse 2s ease-in-out infinite;
     }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50%       { opacity: 0.4; }
-    }
 
     .card-emoji { font-size: 28px; line-height: 1; }
     .card-name  { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
     .card-desc  { font-size: 13px; color: var(--muted); flex: 1; line-height: 1.55; }
 
-    /* ── Tags ───────────────────────────────────────────────────────── */
+    /* ── Tags ────────────────────────────────────────────────────────── */
     .tags { display: flex; flex-wrap: wrap; gap: 6px; }
     .tag {
       font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
       padding: 3px 9px; border-radius: 999px;
-      background: rgba(255,255,255,0.06);
+      background: var(--surface2);
     }
-    /* tag colors */
     .tag-js     { color: #818cf8; background: rgba(129,140,248,0.12); }
     .tag-py     { color: #34d399; background: rgba(52,211,153,0.12); }
     .tag-go     { color: #60a5fa; background: rgba(96,165,250,0.12); }
@@ -162,13 +286,14 @@
     .tag-d3     { color: #f97316; background: rgba(249,115,22,0.12); }
     .tag-ai     { color: #e879f9; background: rgba(232,121,249,0.12); }
 
-    /* ── Buttons ────────────────────────────────────────────────────── */
-    .card-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+    /* ── Buttons ─────────────────────────────────────────────────────── */
+    .card-actions { display: flex; gap: 8px; flex-wrap: wrap; }
     .btn {
       display: inline-flex; align-items: center; gap: 5px;
       font-size: 12px; font-weight: 600; padding: 7px 14px;
       border-radius: 8px; border: 1px solid;
-      cursor: pointer; transition: background 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      transition: background 0.2s, box-shadow 0.2s, color 0.2s;
       white-space: nowrap;
     }
     .btn-live {
@@ -178,16 +303,58 @@
     }
     .btn-live:hover {
       background: rgba(129,140,248,0.28);
-      box-shadow: 0 0 16px rgba(129,140,248,0.35);
+      box-shadow: 0 0 18px rgba(129,140,248,0.35);
+    }
+    html[data-theme="light"] .btn-live {
+      background: rgba(79,70,229,0.1);
+      border-color: rgba(79,70,229,0.35);
+      color: #3730a3;
+    }
+    html[data-theme="light"] .btn-live:hover {
+      background: rgba(79,70,229,0.2);
+      box-shadow: 0 0 14px rgba(79,70,229,0.25);
     }
     .btn-repo {
-      background: rgba(255,255,255,0.04);
+      background: var(--surface);
       border-color: var(--border);
       color: var(--muted);
     }
-    .btn-repo:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
+    .btn-repo:hover { color: var(--text); border-color: var(--border2); background: var(--surface2); }
 
-    /* ── Footer ─────────────────────────────────────────────────────── */
+    /* ── Card footer — GitHub stats ───────────────────────────────────── */
+    .card-footer {
+      display: flex; gap: 14px; align-items: center;
+      font-size: 11px; color: var(--muted);
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+      min-height: 28px;
+      transition: border-color 0.3s;
+    }
+    .card-stat { display: flex; align-items: center; gap: 4px; }
+    .stat-shimmer {
+      display: inline-block;
+      width: 44px; height: 10px; border-radius: 5px;
+      background: linear-gradient(
+        90deg,
+        var(--surface2) 25%,
+        var(--border2)  50%,
+        var(--surface2) 75%
+      );
+      background-size: 200% 100%;
+      animation: shimmer 1.6s infinite;
+    }
+
+    /* ── No results ──────────────────────────────────────────────────── */
+    #no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 60px 24px;
+      color: var(--muted);
+      font-size: 15px;
+      display: none;
+    }
+
+    /* ── Footer ──────────────────────────────────────────────────────── */
     footer {
       text-align: center;
       padding: 32px 24px;
@@ -196,12 +363,14 @@
       border-top: 1px solid var(--border);
     }
     footer a { color: var(--accent); }
+    footer a:hover { text-decoration: underline; }
 
-    /* ── Responsive header ──────────────────────────────────────────── */
+    /* ── Responsive tweaks ────────────────────────────────────────────── */
     @media (max-width: 560px) {
       header { padding: 12px 16px; }
       main   { padding: 32px 16px 64px; }
       .gh-link span { display: none; }
+      #search { max-width: 100%; }
     }
   </style>
 </head>
@@ -215,8 +384,9 @@
       <h1>rftheisen</h1>
       <p>Software projects &amp; experiments</p>
     </div>
+    <button id="theme-toggle" aria-label="Toggle light/dark mode">🌙</button>
     <a class="gh-link" href="https://github.com/rftheisen" target="_blank" rel="noopener">
-      <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
       <span>GitHub</span>
     </a>
   </div>
@@ -226,25 +396,29 @@
 <main>
   <section class="hero">
     <h2>Building things to<br>learn and share.</h2>
-    <p>Games, tools, and experiments — built in public. Click any card to explore the code or try the live demo.</p>
+    <p>Games, tools, and experiments — built in public. Explore the code or try a live demo.</p>
+    <div id="stats-bar"></div>
   </section>
 
-  <div class="filters">
-    <button class="pill active" onclick="filterCards('all')">All</button>
-    <button class="pill" onclick="filterCards('web')">🌐 Web Apps</button>
-    <button class="pill" onclick="filterCards('tool')">🔧 Tools &amp; Scripts</button>
+  <div class="search-wrapper">
+    <span class="search-icon" aria-hidden="true">🔍</span>
+    <input id="search" type="search" placeholder="Search projects…" autocomplete="off" spellcheck="false" />
   </div>
 
-  <div class="grid" id="grid"></div>
+  <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
+
+  <div class="grid" id="grid">
+    <div id="no-results">No projects match — try a different search term.</div>
+  </div>
 </main>
 
 <footer>
-  Built with <a href="https://pages.github.com" target="_blank">GitHub Pages</a> ·
-  <a href="https://github.com/rftheisen" target="_blank">github.com/rftheisen</a>
+  Built with <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a> ·
+  <a href="https://github.com/rftheisen" target="_blank" rel="noopener">github.com/rftheisen</a>
 </footer>
 
 <script>
-  // ── Project data ─────────────────────────────────────────────────────────
+  // ── Project data ──────────────────────────────────────────────────────────
   const PROJECTS = [
     {
       id: "pong",
@@ -359,19 +533,115 @@
   ];
 
   // ── Tag class mapping ─────────────────────────────────────────────────────
-  const TAG_CLASS = { js:"tag-js", py:"tag-py", go:"tag-go", ps:"tag-ps",
-                      ansible:"tag-ansible", sec:"tag-sec", d3:"tag-d3", ai:"tag-ai" };
+  const TAG_CLASS = {
+    js: "tag-js", py: "tag-py", go: "tag-go", ps: "tag-ps",
+    ansible: "tag-ansible", sec: "tag-sec", d3: "tag-d3", ai: "tag-ai"
+  };
+
+  // Per-primary-tag glow + border colors for card hover
+  const GLOW_MAP = {
+    js:      "rgba(129,140,248,0.20)",
+    py:      "rgba(52,211,153,0.20)",
+    go:      "rgba(96,165,250,0.20)",
+    ps:      "rgba(244,114,182,0.20)",
+    ansible: "rgba(251,191,36,0.20)",
+    sec:     "rgba(248,113,113,0.20)",
+    d3:      "rgba(249,115,22,0.20)",
+    ai:      "rgba(232,121,249,0.20)"
+  };
+  const BORDER_MAP = {
+    js:      "rgba(129,140,248,0.50)",
+    py:      "rgba(52,211,153,0.50)",
+    go:      "rgba(96,165,250,0.50)",
+    ps:      "rgba(244,114,182,0.50)",
+    ansible: "rgba(251,191,36,0.50)",
+    sec:     "rgba(248,113,113,0.50)",
+    d3:      "rgba(249,115,22,0.50)",
+    ai:      "rgba(232,121,249,0.50)"
+  };
+
+  // ── State ─────────────────────────────────────────────────────────────────
+  let activeFilter = "all";
+  let searchQuery  = "";
+  let initialized  = false; // gates immediate .visible on filter/search
+
+  // ── Theme toggle ──────────────────────────────────────────────────────────
+  const html     = document.documentElement;
+  const themeBtn = document.getElementById("theme-toggle");
+
+  const savedTheme = localStorage.getItem("rftheisen-theme") || "dark";
+  html.dataset.theme = savedTheme;
+  themeBtn.textContent = savedTheme === "dark" ? "🌙" : "☀️";
+
+  themeBtn.addEventListener("click", () => {
+    const next = html.dataset.theme === "dark" ? "light" : "dark";
+    html.dataset.theme = next;
+    themeBtn.textContent = next === "dark" ? "🌙" : "☀️";
+    localStorage.setItem("rftheisen-theme", next);
+  });
+
+  // ── Stats bar ─────────────────────────────────────────────────────────────
+  function renderStats() {
+    const total = PROJECTS.length;
+    const live  = PROJECTS.filter(p => p.live).length;
+    const langs = new Set(PROJECTS.map(p => p.tags[0][0]));
+
+    document.getElementById("stats-bar").innerHTML = `
+      <strong>${total}</strong>&nbsp;projects
+      <span class="stat-sep">·</span>
+      <strong>${live}</strong>&nbsp;live demos
+      <span class="stat-sep">·</span>
+      <strong>${langs.size}</strong>&nbsp;languages
+    `;
+  }
+
+  // ── Filter pills ──────────────────────────────────────────────────────────
+  function renderFilters() {
+    const cats = [
+      { key: "all",  label: "All" },
+      { key: "web",  label: "🌐 Web Apps" },
+      { key: "tool", label: "🔧 Tools &amp; Scripts" }
+    ];
+    const counts = {
+      all:  PROJECTS.length,
+      web:  PROJECTS.filter(p => p.category === "web").length,
+      tool: PROJECTS.filter(p => p.category === "tool").length
+    };
+
+    const container = document.getElementById("filters");
+    container.innerHTML = "";
+
+    cats.forEach(({ key, label }) => {
+      const btn = document.createElement("button");
+      btn.className = "pill" + (key === activeFilter ? " active" : "");
+      btn.dataset.cat = key;
+      btn.setAttribute("role", "radio");
+      btn.setAttribute("aria-checked", key === activeFilter ? "true" : "false");
+      btn.innerHTML = `${label} <span class="pill-count">${counts[key]}</span>`;
+      btn.addEventListener("click", () => setFilter(key));
+      container.appendChild(btn);
+    });
+  }
 
   // ── Render cards ──────────────────────────────────────────────────────────
   function renderCards() {
     const grid = document.getElementById("grid");
-    grid.innerHTML = "";
+    grid.querySelectorAll(".card").forEach(c => c.remove());
 
-    PROJECTS.forEach(p => {
+    PROJECTS.forEach((p, i) => {
       const card = document.createElement("div");
       card.className = "card";
-      card.dataset.category = p.category;
-      card.dataset.id = p.id;
+      card.dataset.category   = p.category;
+      card.dataset.id         = p.id;
+      card.dataset.searchText = `${p.name} ${p.desc} ${p.tags.map(t => t[0]).join(" ")}`.toLowerCase();
+
+      // Per-card glow based on primary tag
+      const primaryCls = p.tags[0][1];
+      card.style.setProperty("--card-glow",         GLOW_MAP[primaryCls]   || "rgba(129,140,248,0.15)");
+      card.style.setProperty("--card-border-hover",  BORDER_MAP[primaryCls] || "rgba(129,140,248,0.40)");
+
+      // Staggered entrance delay
+      card.style.transitionDelay = `${i * 55}ms`;
 
       const tagsHtml = p.tags
         .map(([label, cls]) => `<span class="tag ${TAG_CLASS[cls] || ''}">${label}</span>`)
@@ -395,26 +665,116 @@
           ${liveBtn}
           <a class="btn btn-repo" href="${p.repo}" target="_blank" rel="noopener">&lt;/&gt; Repo</a>
         </div>
+        <div class="card-footer" id="footer-${p.id}">
+          <span class="card-stat">⭐ <span class="stat-shimmer"></span></span>
+          <span class="card-stat">🕐 <span class="stat-shimmer"></span></span>
+        </div>
       `;
-      grid.appendChild(card);
+
+      grid.insertBefore(card, document.getElementById("no-results"));
     });
   }
 
-  // ── Filter ────────────────────────────────────────────────────────────────
-  function filterCards(cat) {
-    // Update pill active state
-    document.querySelectorAll(".pill").forEach(btn => btn.classList.remove("active"));
-    event.currentTarget.classList.add("active");
-
-    // Show/hide cards
+  // ── Visibility: filter + search combined ──────────────────────────────────
+  function updateVisibility() {
+    let visible = 0;
     document.querySelectorAll(".card").forEach(card => {
-      const match = cat === "all" || card.dataset.category === cat;
-      card.dataset.hidden = match ? "false" : "true";
+      const catOk    = activeFilter === "all" || card.dataset.category === activeFilter;
+      const searchOk = !searchQuery || card.dataset.searchText.includes(searchQuery);
+      const show = catOk && searchOk;
+      card.dataset.hidden = show ? "false" : "true";
+      if (show) {
+        visible++;
+        // After init, immediately reveal cards that IntersectionObserver may have missed
+        // (e.g., cards that were below the fold on page load)
+        if (initialized && !card.classList.contains("visible")) {
+          card.style.transitionDelay = "";
+          requestAnimationFrame(() => card.classList.add("visible"));
+        }
+      }
+    });
+    document.getElementById("no-results").style.display = visible === 0 ? "block" : "none";
+  }
+
+  // ── Set filter ────────────────────────────────────────────────────────────
+  function setFilter(cat) {
+    activeFilter = cat;
+    document.querySelectorAll(".pill").forEach(btn => {
+      const isActive = btn.dataset.cat === cat;
+      btn.classList.toggle("active", isActive);
+      btn.setAttribute("aria-checked", isActive ? "true" : "false");
+    });
+    updateVisibility();
+  }
+
+  // ── Search ────────────────────────────────────────────────────────────────
+  document.getElementById("search").addEventListener("input", e => {
+    searchQuery = e.target.value.trim().toLowerCase();
+    updateVisibility();
+  });
+
+  // ── Entrance animation via IntersectionObserver ───────────────────────────
+  function initAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const card = entry.target;
+          card.classList.add("visible");
+          // Clear entrance delay after animation finishes so hover is snappy
+          const delay = parseFloat(card.style.transitionDelay) || 0;
+          setTimeout(() => { card.style.transitionDelay = ""; }, delay * 1000 + 600);
+          observer.unobserve(card);
+        }
+      });
+    }, { threshold: 0.05 });
+
+    document.querySelectorAll(".card").forEach(card => observer.observe(card));
+  }
+
+  // ── GitHub stats ──────────────────────────────────────────────────────────
+  function timeAgo(iso) {
+    const diff = Math.floor((Date.now() - new Date(iso).getTime()) / 1000);
+    if (diff < 60)          return "just now";
+    if (diff < 3600)        return `${Math.floor(diff / 60)}m ago`;
+    if (diff < 86400)       return `${Math.floor(diff / 3600)}h ago`;
+    if (diff < 86400 * 30)  return `${Math.floor(diff / 86400)}d ago`;
+    if (diff < 86400 * 365) return `${Math.floor(diff / (86400 * 30))}mo ago`;
+    return `${Math.floor(diff / (86400 * 365))}y ago`;
+  }
+
+  async function fetchGitHubStats() {
+    const results = await Promise.allSettled(
+      PROJECTS.map(p =>
+        fetch(`https://api.github.com/repos/rftheisen/${p.id}`, {
+          headers: { Accept: "application/vnd.github.v3+json" }
+        }).then(r => r.ok ? r.json() : Promise.reject(r.status))
+      )
+    );
+
+    results.forEach((result, i) => {
+      const footer = document.getElementById(`footer-${PROJECTS[i].id}`);
+      if (!footer) return;
+
+      if (result.status === "fulfilled") {
+        const { stargazers_count: stars = 0, pushed_at } = result.value;
+        footer.innerHTML = `
+          <span class="card-stat">⭐ ${stars}</span>
+          <span class="card-stat">🕐 ${pushed_at ? timeAgo(pushed_at) : "—"}</span>
+        `;
+      } else {
+        footer.innerHTML = ""; // silently hide on error / rate limit
+      }
     });
   }
 
   // ── Init ──────────────────────────────────────────────────────────────────
+  renderStats();
+  renderFilters();
   renderCards();
+  updateVisibility();   // initialized=false here → no immediate .visible
+  initAnimations();     // IntersectionObserver handles viewport cards
+  initialized = true;   // from here on, filter/search reveals add .visible
+  fetchGitHubStats();
 </script>
 </body>
 </html>
