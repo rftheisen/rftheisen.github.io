@@ -140,6 +140,45 @@
     }
     .hero p { font-size: 16px; color: var(--muted); max-width: 520px; margin-bottom: 18px; }
 
+    /* ── Blog callout ────────────────────────────────────────────────── */
+    .blog-callout {
+      display: inline-flex; align-items: center; gap: 10px;
+      margin-top: 22px;
+      padding: 12px 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      font-size: 13px; color: var(--muted);
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s;
+      max-width: fit-content;
+    }
+    .blog-callout:hover {
+      background: var(--surface2);
+      border-color: rgba(129,140,248,0.4);
+      color: var(--text);
+      box-shadow: 0 0 20px rgba(129,140,248,0.1);
+    }
+    html[data-theme="light"] .blog-callout:hover {
+      border-color: rgba(79,70,229,0.35);
+      box-shadow: 0 0 16px rgba(79,70,229,0.1);
+    }
+    .blog-callout-label {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--accent);
+      background: rgba(129,140,248,0.12); border-radius: 4px;
+      padding: 2px 7px; flex-shrink: 0;
+    }
+    html[data-theme="light"] .blog-callout-label {
+      background: rgba(79,70,229,0.1); color: var(--accent);
+    }
+    .blog-callout-arrow {
+      margin-left: auto; color: var(--muted);
+      transition: transform 0.2s;
+      flex-shrink: 0;
+    }
+    .blog-callout:hover .blog-callout-arrow { transform: translateX(3px); }
+
     /* ── Stats bar ────────────────────────────────────────────────────── */
     #stats-bar {
       display: flex; gap: 6px 14px; flex-wrap: wrap; align-items: center;
@@ -402,6 +441,11 @@
     <h2>Building things to<br>learn and share.</h2>
     <p>Games, tools, and experiments — built in public. Explore the code or try a live demo.</p>
     <div id="stats-bar"></div>
+    <a class="blog-callout" href="https://bob.ltneighbor.net/" target="_blank" rel="noopener">
+      <span class="blog-callout-label">Blog</span>
+      I also write about sysadmin, security, home labs, and learning — read it at bob.ltneighbor.net
+      <span class="blog-callout-arrow">→</span>
+    </a>
   </section>
 
   <div class="search-wrapper">
@@ -418,7 +462,8 @@
 
 <footer>
   Built with <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a> ·
-  <a href="https://github.com/rftheisen" target="_blank" rel="noopener">github.com/rftheisen</a>
+  <a href="https://github.com/rftheisen" target="_blank" rel="noopener">github.com/rftheisen</a> ·
+  <a href="https://bob.ltneighbor.net/" target="_blank" rel="noopener">bob.ltneighbor.net</a>
 </footer>
 
 <script>
