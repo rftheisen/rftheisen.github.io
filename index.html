@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rftheisen — Projects</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0d0b1e;
+      --bg2:       #130e2a;
+      --surface:   rgba(255,255,255,0.04);
+      --border:    rgba(255,255,255,0.08);
+      --text:      rgba(255,255,255,0.88);
+      --muted:     rgba(255,255,255,0.38);
+      --accent:    #818cf8;
+      --accent-glow: rgba(129,140,248,0.35);
+    }
+
+    /* ── Base ───────────────────────────────────────────────────────── */
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Header ─────────────────────────────────────────────────────── */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(13,11,30,0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 32px;
+    }
+    .header-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: flex; align-items: center; gap: 14px;
+    }
+    .avatar {
+      width: 38px; height: 38px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), #f472b6);
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 16px; flex-shrink: 0;
+      box-shadow: 0 0 16px var(--accent-glow);
+    }
+    .header-text { flex: 1; }
+    .header-text h1 { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
+    .header-text p  { font-size: 12px; color: var(--muted); }
+    .gh-link {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 13px; color: var(--muted);
+      border: 1px solid var(--border);
+      border-radius: 8px; padding: 6px 12px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .gh-link:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
+    .gh-link svg { width: 16px; height: 16px; fill: currentColor; }
+
+    /* ── Main ───────────────────────────────────────────────────────── */
+    main { max-width: 1100px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    /* ── Hero ───────────────────────────────────────────────────────── */
+    .hero { margin-bottom: 48px; }
+    .hero h2 {
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 800; letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #fff 30%, var(--accent));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+    }
+    .hero p { font-size: 16px; color: var(--muted); max-width: 520px; }
+
+    /* ── Filters ────────────────────────────────────────────────────── */
+    .filters {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+    .pill {
+      padding: 7px 18px; border-radius: 999px; font-size: 13px; font-weight: 500;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--muted); cursor: pointer;
+      transition: background 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+    .pill:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
+    .pill.active {
+      background: rgba(129,140,248,0.18);
+      border-color: rgba(129,140,248,0.5);
+      color: #c7d0ff;
+      box-shadow: 0 0 16px var(--accent-glow);
+    }
+
+    /* ── Grid ───────────────────────────────────────────────────────── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+
+    /* ── Card ───────────────────────────────────────────────────────── */
+    .card {
+      position: relative;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      display: flex; flex-direction: column; gap: 12px;
+      transition: border-color 0.25s, box-shadow 0.25s, transform 0.2s;
+    }
+    .card:hover {
+      border-color: rgba(129,140,248,0.35);
+      box-shadow: 0 0 32px rgba(129,140,248,0.1);
+      transform: translateY(-2px);
+    }
+    .card[data-hidden="true"] { display: none; }
+
+    .live-badge {
+      position: absolute; top: 16px; right: 16px;
+      display: flex; align-items: center; gap: 5px;
+      font-size: 10px; font-weight: 600; letter-spacing: 0.06em;
+      color: #4ade80; text-transform: uppercase;
+    }
+    .live-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: #4ade80;
+      box-shadow: 0 0 6px #4ade80;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50%       { opacity: 0.4; }
+    }
+
+    .card-emoji { font-size: 28px; line-height: 1; }
+    .card-name  { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; }
+    .card-desc  { font-size: 13px; color: var(--muted); flex: 1; line-height: 1.55; }
+
+    /* ── Tags ───────────────────────────────────────────────────────── */
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag {
+      font-size: 11px; font-weight: 600; letter-spacing: 0.04em;
+      padding: 3px 9px; border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+    }
+    /* tag colors */
+    .tag-js     { color: #818cf8; background: rgba(129,140,248,0.12); }
+    .tag-py     { color: #34d399; background: rgba(52,211,153,0.12); }
+    .tag-go     { color: #60a5fa; background: rgba(96,165,250,0.12); }
+    .tag-ps     { color: #f472b6; background: rgba(244,114,182,0.12); }
+    .tag-ansible{ color: #fbbf24; background: rgba(251,191,36,0.12); }
+    .tag-sec    { color: #f87171; background: rgba(248,113,113,0.12); }
+    .tag-d3     { color: #f97316; background: rgba(249,115,22,0.12); }
+    .tag-ai     { color: #e879f9; background: rgba(232,121,249,0.12); }
+
+    /* ── Buttons ────────────────────────────────────────────────────── */
+    .card-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 12px; font-weight: 600; padding: 7px 14px;
+      border-radius: 8px; border: 1px solid;
+      cursor: pointer; transition: background 0.2s, box-shadow 0.2s;
+      white-space: nowrap;
+    }
+    .btn-live {
+      background: rgba(129,140,248,0.15);
+      border-color: rgba(129,140,248,0.45);
+      color: #c7d0ff;
+    }
+    .btn-live:hover {
+      background: rgba(129,140,248,0.28);
+      box-shadow: 0 0 16px rgba(129,140,248,0.35);
+    }
+    .btn-repo {
+      background: rgba(255,255,255,0.04);
+      border-color: var(--border);
+      color: var(--muted);
+    }
+    .btn-repo:hover { color: var(--text); border-color: rgba(255,255,255,0.2); }
+
+    /* ── Footer ─────────────────────────────────────────────────────── */
+    footer {
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 12px;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--accent); }
+
+    /* ── Responsive header ──────────────────────────────────────────── */
+    @media (max-width: 560px) {
+      header { padding: 12px 16px; }
+      main   { padding: 32px 16px 64px; }
+      .gh-link span { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Header ──────────────────────────────────────────────────────────── -->
+<header>
+  <div class="header-inner">
+    <div class="avatar">R</div>
+    <div class="header-text">
+      <h1>rftheisen</h1>
+      <p>Software projects &amp; experiments</p>
+    </div>
+    <a class="gh-link" href="https://github.com/rftheisen" target="_blank" rel="noopener">
+      <svg viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      <span>GitHub</span>
+    </a>
+  </div>
+</header>
+
+<!-- ── Main ────────────────────────────────────────────────────────────── -->
+<main>
+  <section class="hero">
+    <h2>Building things to<br>learn and share.</h2>
+    <p>Games, tools, and experiments — built in public. Click any card to explore the code or try the live demo.</p>
+  </section>
+
+  <div class="filters">
+    <button class="pill active" onclick="filterCards('all')">All</button>
+    <button class="pill" onclick="filterCards('web')">🌐 Web Apps</button>
+    <button class="pill" onclick="filterCards('tool')">🔧 Tools &amp; Scripts</button>
+  </div>
+
+  <div class="grid" id="grid"></div>
+</main>
+
+<footer>
+  Built with <a href="https://pages.github.com" target="_blank">GitHub Pages</a> ·
+  <a href="https://github.com/rftheisen" target="_blank">github.com/rftheisen</a>
+</footer>
+
+<script>
+  // ── Project data ─────────────────────────────────────────────────────────
+  const PROJECTS = [
+    {
+      id: "pong",
+      emoji: "🏓",
+      name: "Pong",
+      category: "web",
+      desc: "Web-based Pong with a live code display — watch exactly which functions execute as you play.",
+      tags: [["JavaScript","js"],["Canvas","js"],["Game","js"]],
+      live: "https://rftheisen.github.io/pong/",
+      repo: "https://github.com/rftheisen/pong"
+    },
+    {
+      id: "videosearch",
+      emoji: "🎥",
+      name: "Video Search",
+      category: "web",
+      desc: "Search engine for 169 videos from the LTN Labs YouTube channel. Instant results, dark mode, thumbnail previews.",
+      tags: [["JavaScript","js"],["Search","js"]],
+      live: "https://rftheisen.github.io/videosearch/",
+      repo: "https://github.com/rftheisen/videosearch"
+    },
+    {
+      id: "technologistsnexus",
+      emoji: "🕸️",
+      name: "Technologists Nexus",
+      category: "web",
+      desc: "Interactive D3.js knowledge graph of tech news — zoom, pan, hover tooltips, category color-coding, and dark/light mode.",
+      tags: [["JavaScript","js"],["D3.js","d3"],["News","js"]],
+      live: "https://rftheisen.github.io/technologistsnexus/",
+      repo: "https://github.com/rftheisen/technologistsnexus"
+    },
+    {
+      id: "autonomous-it-agent",
+      emoji: "🤖",
+      name: "Autonomous IT Agent",
+      category: "tool",
+      desc: "AI-powered IT helpdesk agent backed by Mistral 7B via Ollama. Conservative / moderate / aggressive automation modes. Flask web UI.",
+      tags: [["Python","py"],["AI","ai"],["Ollama","ai"],["Flask","py"]],
+      live: null,
+      repo: "https://github.com/rftheisen/autonomous-it-agent"
+    },
+    {
+      id: "GoCrackIt",
+      emoji: "🔐",
+      name: "GoCrackIt",
+      category: "tool",
+      desc: "Multithreaded password hash cracker written in Go. Supports MD5, SHA-1/256/512, Bcrypt, Argon2id, NTLM, and more.",
+      tags: [["Go","go"],["Security","sec"]],
+      live: null,
+      repo: "https://github.com/rftheisen/GoCrackIt"
+    },
+    {
+      id: "ClockPunch",
+      emoji: "⏱️",
+      name: "ClockPunch",
+      category: "tool",
+      desc: "Clock in, clock out, and track time. Flask + SQLAlchemy web app targeting organizations still using paper timesheets.",
+      tags: [["Python","py"],["Flask","py"],["SQL","py"]],
+      live: null,
+      repo: "https://github.com/rftheisen/ClockPunch"
+    },
+    {
+      id: "EntryLevelITJobFinder",
+      emoji: "💼",
+      name: "IT Job Finder",
+      category: "tool",
+      desc: "Scrapes job boards for entry-level IT positions and surfaces them in a clean web UI backed by a Flask API.",
+      tags: [["Python","py"],["Flask","py"],["Scraping","py"]],
+      live: null,
+      repo: "https://github.com/rftheisen/EntryLevelITJobFinder"
+    },
+    {
+      id: "MarkUp",
+      emoji: "📝",
+      name: "MarkUp",
+      category: "web",
+      desc: "Lightweight Markdown editor with live preview in the browser. No dependencies.",
+      tags: [["JavaScript","js"]],
+      live: null,
+      repo: "https://github.com/rftheisen/MarkUp"
+    },
+    {
+      id: "storagechecker",
+      emoji: "💾",
+      name: "Storage Checker",
+      category: "tool",
+      desc: "PowerShell script that quickly identifies which directories are consuming the most space on a Windows system.",
+      tags: [["PowerShell","ps"],["Sysadmin","ps"]],
+      live: null,
+      repo: "https://github.com/rftheisen/storagechecker"
+    },
+    {
+      id: "HashChecker",
+      emoji: "🔎",
+      name: "Hash Checker",
+      category: "tool",
+      desc: "Python utility for verifying file integrity via hash comparison. Supports multiple hashing algorithms.",
+      tags: [["Python","py"],["Security","sec"]],
+      live: null,
+      repo: "https://github.com/rftheisen/HashChecker"
+    },
+    {
+      id: "BobsPlaybooks",
+      emoji: "📋",
+      name: "Bob's Playbooks",
+      category: "tool",
+      desc: "Practical Ansible playbooks for Linux sysadmin tasks: updates, reboots, pings, package management.",
+      tags: [["Ansible","ansible"],["DevOps","ansible"]],
+      live: null,
+      repo: "https://github.com/rftheisen/BobsPlaybooks"
+    }
+  ];
+
+  // ── Tag class mapping ─────────────────────────────────────────────────────
+  const TAG_CLASS = { js:"tag-js", py:"tag-py", go:"tag-go", ps:"tag-ps",
+                      ansible:"tag-ansible", sec:"tag-sec", d3:"tag-d3", ai:"tag-ai" };
+
+  // ── Render cards ──────────────────────────────────────────────────────────
+  function renderCards() {
+    const grid = document.getElementById("grid");
+    grid.innerHTML = "";
+
+    PROJECTS.forEach(p => {
+      const card = document.createElement("div");
+      card.className = "card";
+      card.dataset.category = p.category;
+      card.dataset.id = p.id;
+
+      const tagsHtml = p.tags
+        .map(([label, cls]) => `<span class="tag ${TAG_CLASS[cls] || ''}">${label}</span>`)
+        .join("");
+
+      const liveBtn = p.live
+        ? `<a class="btn btn-live" href="${p.live}" target="_blank" rel="noopener">↗ Live Demo</a>`
+        : "";
+
+      const liveBadge = p.live
+        ? `<div class="live-badge"><div class="live-dot"></div>LIVE</div>`
+        : "";
+
+      card.innerHTML = `
+        ${liveBadge}
+        <div class="card-emoji">${p.emoji}</div>
+        <div class="card-name">${p.name}</div>
+        <div class="card-desc">${p.desc}</div>
+        <div class="tags">${tagsHtml}</div>
+        <div class="card-actions">
+          ${liveBtn}
+          <a class="btn btn-repo" href="${p.repo}" target="_blank" rel="noopener">&lt;/&gt; Repo</a>
+        </div>
+      `;
+      grid.appendChild(card);
+    });
+  }
+
+  // ── Filter ────────────────────────────────────────────────────────────────
+  function filterCards(cat) {
+    // Update pill active state
+    document.querySelectorAll(".pill").forEach(btn => btn.classList.remove("active"));
+    event.currentTarget.classList.add("active");
+
+    // Show/hide cards
+    document.querySelectorAll(".card").forEach(card => {
+      const match = cat === "all" || card.dataset.category === cat;
+      card.dataset.hidden = match ? "false" : "true";
+    });
+  }
+
+  // ── Init ──────────────────────────────────────────────────────────────────
+  renderCards();
+</script>
+</body>
+</html>

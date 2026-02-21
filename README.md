@@ -1,23 +1,23 @@
-# Bob's Learning Projects
+# rftheisen — Projects
 
-This is where I host software projects and games to experiment and learn with. 
+Software projects and experiments, built in public.
 
-## PongLab
-Check out my Web-based game inspired by pong called PongLab, designed to inspire curiosity. Players can see what code is executing as they play.
-Play here: [rtheisen.github.io/pages](https://rftheisen.github.io/pong/)
-![pongdemo](https://github.com/rftheisen/rftheisen.github.io/assets/52935050/27a776ee-9f22-44f7-9a57-d6caa1e7b2b8)
+🌐 **Portfolio**: [rftheisen.github.io](https://rftheisen.github.io)
 
+---
 
-See the source code for PongLab here: https://github.com/rftheisen/pong
+## Projects
 
-## videosearch
-
-When you search for topics videosearch will search my YouTube channel (LTN Labs) for relevant content. Feel free to clone this project and use it for your own YouTube channel. Reach out to me if you need help getting it to work for your specific content.
-
-Use videosearch here: [https://rftheisen.github.io/videosearch/](https://rftheisen.github.io/videosearch/)
-
-![videosearchdemo](https://github.com/rftheisen/rftheisen.github.io/assets/52935050/31cde245-e2af-43a9-91f0-0bcf78027e1b)
-
-Please feel free to customize this project for your own YouTube channel and content. You will need to edit the videos.json file to ensure it is referencing your content. You will also need to ensure the videosearch project files are hosted on your preferred platform. I recommend using GitHub pages.
-
-See the source code for videosearch here: [https://github.com/rftheisen/videosearch](https://github.com/rftheisen/videosearch)
+| Project | Description | Live | Repo |
+|---------|-------------|------|------|
+| 🏓 **Pong** | Web Pong with live code display as you play | [▶ Play](https://rftheisen.github.io/pong/) | [repo](https://github.com/rftheisen/pong) |
+| 🎥 **Video Search** | Search engine for 169 LTN Labs YouTube videos | [▶ Try it](https://rftheisen.github.io/videosearch/) | [repo](https://github.com/rftheisen/videosearch) |
+| 🕸️ **Technologists Nexus** | Interactive D3.js tech news knowledge graph | [▶ Explore](https://rftheisen.github.io/technologistsnexus/) | [repo](https://github.com/rftheisen/technologistsnexus) |
+| 🤖 **Autonomous IT Agent** | AI helpdesk agent (Mistral 7B + Ollama, Flask UI) | — | [repo](https://github.com/rftheisen/autonomous-it-agent) |
+| 🔐 **GoCrackIt** | Multithreaded password hash cracker (Go) | — | [repo](https://github.com/rftheisen/GoCrackIt) |
+| ⏱️ **ClockPunch** | Time-tracking web app (Flask + SQLAlchemy) | — | [repo](https://github.com/rftheisen/ClockPunch) |
+| 💼 **IT Job Finder** | Entry-level IT job scraper + web UI | — | [repo](https://github.com/rftheisen/EntryLevelITJobFinder) |
+| 📝 **MarkUp** | Lightweight Markdown editor with live preview | — | [repo](https://github.com/rftheisen/MarkUp) |
+| 💾 **Storage Checker** | PowerShell script to find storage hogs on Windows | — | [repo](https://github.com/rftheisen/storagechecker) |
+| 🔎 **Hash Checker** | Python file hash verifier | — | [repo](https://github.com/rftheisen/HashChecker) |
+| 📋 **Bob's Playbooks** | Ansible playbooks for Linux sysadmin tasks | — | [repo](https://github.com/rftheisen/BobsPlaybooks) |
