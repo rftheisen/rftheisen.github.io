@@ -386,6 +386,7 @@
     .tag-sec    { color: #fca5a5; background: rgba(252,165,165,0.08); border-color: rgba(252,165,165,0.15); }
     .tag-d3     { color: #fdba74; background: rgba(253,186,116,0.08); border-color: rgba(253,186,116,0.15); }
     .tag-ai     { color: #d8b4fe; background: rgba(216,180,254,0.08); border-color: rgba(216,180,254,0.15); }
+    .tag-docs   { color: #67e8f9; background: rgba(103,232,249,0.08); border-color: rgba(103,232,249,0.15); }
 
     /* ── Buttons ─────────────────────────────────────────────────────── */
     .card-actions { display: flex; gap: 6px; flex-wrap: wrap; }
@@ -535,6 +536,16 @@
   // ── Project data ──────────────────────────────────────────────────────────
   const PROJECTS = [
     {
+      id: "reportkit",
+      emoji: "📄",
+      name: "ReportKit",
+      category: "tool",
+      desc: "Local-first, Git-friendly security reporting. Turn Markdown, YAML metadata, and evidence into polished HTML and PDF deliverables.",
+      tags: [["Python","py"],["Security","sec"],["Markdown","docs"],["PDF","docs"]],
+      live: "https://rftheisen.github.io/reportkit/",
+      repo: "https://github.com/rftheisen/reportkit"
+    },
+    {
       id: "pong",
       emoji: "🏓",
       name: "Pong",
@@ -649,7 +660,8 @@
   // ── Tag class mapping ─────────────────────────────────────────────────────
   const TAG_CLASS = {
     js: "tag-js", py: "tag-py", go: "tag-go", ps: "tag-ps",
-    ansible: "tag-ansible", sec: "tag-sec", d3: "tag-d3", ai: "tag-ai"
+    ansible: "tag-ansible", sec: "tag-sec", d3: "tag-d3", ai: "tag-ai",
+    docs: "tag-docs"
   };
 
   // Unified warm amber glow for all cards
